@@ -1,0 +1,8 @@
+@use './variables' as *;
+@use './mixins' as *;
+@use './typography' as *;
+
+* {
+    font-family: 'AvenirNext';
+    overflow-x: hidden;
+}

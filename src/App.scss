@@ -1,0 +1,7 @@
+@use '/src/styles/partials/global' as *;
+@use '/src/styles/partials/variables' as*;
+
+*{
+    font-family: 'AvenirNext';
+    background-color: $secondary-color-4;
+}
