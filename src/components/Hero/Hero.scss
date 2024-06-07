@@ -1,0 +1,16 @@
+.hero {
+    width: 100vw;
+    height: auto;
+    background-repeat: no-repeat;
+    align-items: center;
+    background-position: top;
+    background-color: pink;
+
+    &__videoContainer {
+        background-color: #0a0a22;
+        background-size: 100%;
+        // aspect-ratio: 1/2;
+        display: flex;
+        justify-content: normal;
+    }
+}
