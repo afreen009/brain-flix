@@ -1,0 +1,96 @@
+@use '/src/styles/partials/variables' as*;
+@use '/src/styles/partials/mixins' as *;
+@use '/src/styles/partials/variables' as*;
+
+.commentList{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    background-color: wheat;
+    display: inline-flex;
+    @include tablet {
+        padding:0rem 4rem;
+    }
+    @include desktop{
+        padding:0 5.75rem 0 4rem;
+        width: 56vw;
+    }
+
+    &__card {
+        width: 100%;
+        display: inline-flex;
+        flex-direction: row;
+        }
+    &__avatarDiv {
+        width: 8.4rem;
+        @include tablet {
+            width: 9.4rem;
+            margin-right: 1.25rem;
+            margin-top: 0rem;
+            padding-top: 0;
+        } 
+    }
+    &__commentAvatarCircle {
+        width: 2.25rem;
+        height: 2.25rem;
+        background: $secondary-color-3;
+        border-radius: 50%;
+        // margin-top: 1rem;
+        @include tablet {
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+    &__commentDiv {
+        display: inline-block;
+        padding:0 1rem 0 .3125rem ;
+        width: 272%;
+        @include tablet {
+            padding-left:1rem;
+            width: 272%;
+        }
+        @include tablet {
+            width: 260%;
+        }
+    }
+    &__commentedNameTimeDiv{
+        display: inline-flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    &__commentedName {
+        font-size: 1rem;
+        font-weight: 600;
+        color: $secondary-color-1;
+    }
+
+    &__commentedDate {
+        font-size: .875rem;
+        color: $primary-color-3;
+        font-weight: 400;
+        padding-right: 1rem;
+        @include desktop{
+            padding: 0;
+        }
+    }
+    &__comment {
+        margin:0 0 1rem 0;
+        font-size: .8125rem;
+        font-weight: 400;
+        @include desktop{
+            margin-right: 0;
+        }
+    }
+    &__divider {
+        @include divider;
+        margin: 1rem 1rem 1rem 0;
+        @include desktop{
+            margin: 0;
+        }
+        &--bottom{
+            margin: 0;
+        }
+    }
+}

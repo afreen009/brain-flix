@@ -1,5 +1,6 @@
 import { useState } from "react";
 import '../Comments/Comments.scss';
+import CommentsList from "../CommentList/CommentList";
 
 const Comments = ({video}) => {
     // const formattedDate = new Date(video.comments[].timestamp).toLocaleDateString("en-US");
@@ -14,7 +15,7 @@ const Comments = ({video}) => {
                             </div>
                         </div>
                         
-                            <label className="comment__commentLabel" for="comments">COMMENT</label>
+                            {/* <label className="comment__commentLabel" for="comments">COMMENT</label> */}
                             <textarea
                                     name="comment__commentBox"
                                     id="comment"
@@ -25,13 +26,13 @@ const Comments = ({video}) => {
                                     required
                             ></textarea>
                     </div>
-
                         <div className="comment__buttonDiv">
                             <button type="submit" id="submit" className="comment__submitButton"> COMMENT</button>
                         </div>
                     </div> 
+                    <CommentsList commentsList={video.comments}/>
             </section>
-            
+
     );
 };
 

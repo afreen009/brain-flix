@@ -1,7 +1,6 @@
 @use '/src/styles/partials/variables' as*;
 @use '/src/styles/partials/mixins' as *;
 @use '/src/styles/partials/variables' as*;
-// @use '/src/assets/images/Mohan-muruge.jpg' as*;
 
 textarea{
     // margin-top: .25rem;
@@ -77,7 +76,7 @@ textarea::placeholder{
         flex-direction: row;
         flex-wrap: nowrap;
     }
-    
+
     &__submitButton{
         background-color: aqua;
         font-size: 1rem;

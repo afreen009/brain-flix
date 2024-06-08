@@ -12,3 +12,7 @@
   }
 }
 
+@mixin divider {
+  height: .0625rem;
+  background-color: $secondary-color-3;
+}
