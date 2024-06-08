@@ -88,14 +88,9 @@
     }
 
     &__channelTime {
-        // width: 50vw;
         display: inline-flex;
         flex-direction: column;
-        // margin-right: 2.25rem;
-        // background-color: aqua;
         @include tablet {
-            width: auto;
-            
             gap: 2rem;
             display: inline-flex;
             flex-direction: row;

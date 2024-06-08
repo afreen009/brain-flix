@@ -1,5 +1,6 @@
 import { useState } from "react";
 import '../VideoDescription/VideoDescription.scss';
+import Comments from '../Comments/Comments';
 
 const VideoDescription = ({video}) => {
     const formattedDate = new Date(video.timestamp).toLocaleDateString("en-US");
@@ -29,6 +30,7 @@ const VideoDescription = ({video}) => {
                 <p className="videoDescription__descriptionPara">
                     {video.description}
                 </p>
+                <Comments video={video}/>
             </section>
     );
 };

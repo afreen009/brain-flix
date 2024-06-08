@@ -1,0 +1,97 @@
+@use '/src/styles/partials/variables' as*;
+@use '/src/styles/partials/mixins' as *;
+@use '/src/styles/partials/variables' as*;
+// @use '/src/assets/images/Mohan-muruge.jpg' as*;
+
+textarea{
+    // margin-top: .25rem;
+    padding: .75rem;
+    background-color: $secondary-color-3;
+    outline: none;
+    border: 1px solid $secondary-color-2;
+    border-radius:.25rem;
+    width: 90%;
+    box-sizing: border-box;
+    font-size: .8125rem;
+    @include tablet{
+        font-size: .875rem;
+    }
+}
+
+textarea:focus {
+    border: 1px solid $secondary-color-1;
+}
+textarea::placeholder{
+    font-weight: 500;
+    color: $primary-color-1;
+}
+
+.comments {
+    margin-left: 1rem;
+    height: auto;
+    margin-bottom: 1rem;
+    color: $primary-color-1;
+    background-color: aqua;
+    font-size: 13px;
+    font-weight: 700;
+    overflow-y: hidden;
+    @include tablet {
+        font-size: 2.0625rem;
+        margin:0;
+        margin-left: 2.25rem;
+    }
+    &__imageBox{
+        width: 4rem;
+        display: inline-flex;
+        justify-content: end;
+        flex-direction: column;
+    }
+    &__image {
+        width: 2.25rem;
+        background-color: pink;
+        height: 2.25rem;
+        border-radius: 100%;
+        position: relative;
+        overflow-y: hidden;
+        @include tablet {
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+    &__imgCircle{
+        width: auto;
+        height: 108%;
+        background-color: aqua;
+    }
+    &__commentBoxsec {
+        background-color: aqua;
+        margin-left: 3.625rem;
+        @include tablet {
+            margin-left: 4.0625rem;
+        }
+    }
+    &__imgCommentDiv{
+        display: inline-flex;
+        width: 100vw;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    
+    &__submitButton{
+        background-color: aqua;
+        font-size: 1rem;
+        font-weight: 600;
+        padding: .75rem;
+        background-color:$primary-color-1;
+        border-radius: .25rem;
+        color: white;
+        width: 100%;
+        @include tablet {
+            width: 9.375rem;
+        }
+    }
+    &__submitButton:hover{
+        background-color:$secondary-color-1;
+    }
+}
