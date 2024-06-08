@@ -9,7 +9,7 @@ function App() {
   const [selectedVideo, setselectedVideo] = useState(videos[0]); 
   return (
     <main className='main'>
-      <Header/>
+      {/* <Header/> */}
       <Hero video={selectedVideo}/>
       <VideoDescription video={selectedVideo}/>
     </main>

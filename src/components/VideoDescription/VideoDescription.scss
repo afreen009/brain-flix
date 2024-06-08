@@ -1,0 +1,104 @@
+@use '/src/styles/partials/variables' as*;
+@use '/src/styles/partials/mixins' as *;
+@use '/src/styles/partials/variables' as*;
+
+.videoDescription {
+    width: 100vw;
+    height: auto;
+    display: inline-flex;
+    &__title{
+        margin-left: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        color: $primary-color-1;
+        font-size: 1.5rem;
+        font-weight: 700;
+        overflow-y: hidden;
+        @include tablet {
+            font-size: 2.0625rem;
+            margin:0;
+            margin-left: 2.25rem;
+            margin-top: 1.5rem;
+        }
+    }
+    &__divider {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        height: .0625rem;
+        background-color: $secondary-color-3;
+        font-size: .625rem;
+        font-weight: 700;
+        &--tabDesk {
+            @include tablet {
+                display: none;
+                margin: 0;
+            }
+        }
+        @include tablet {
+            margin: 0 2.25rem 0 2.25rem;
+        }
+    }
+    &__aboutVideo {
+        margin:1rem;
+        display: inline-flex;
+        width: 100vw;
+        gap: 2rem;
+        flex-direction: row;
+        @include tablet {
+            // display: inline-flex;
+            margin-left: 2.25rem;
+            margin-right: 2.25rem;
+            // justify-content: space-between;
+            // margin: 0 2.25rem 0 2.25rem;
+        }
+    }
+    &__channel {
+        font-size: .8125rem;
+        color: $primary-color-1;
+        margin-bottom: 1rem;
+        @include tablet {
+            margin: 0;
+            font-size: .875rem;
+        }
+    }
+    &__likes, &__views, &__time {
+        font-size: .8125rem;
+        color: $primary-color-3;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+    &__viewRow, &__likesRow {
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+
+    }
+    &__likesRow{
+        margin-top: 1rem;
+        @include tablet{
+            margin: 0;
+        }
+    }
+    &__descriptionPara {
+        margin: 1rem;
+        color: $primary-color-1;
+        font-size: .8125rem;
+        font-weight: 600;
+    }
+
+    &__channelTime {
+        // width: 50vw;
+        display: inline-flex;
+        flex-direction: column;
+        // margin-right: 2.25rem;
+        // background-color: aqua;
+        @include tablet {
+            width: auto;
+            
+            gap: 2rem;
+            display: inline-flex;
+            flex-direction: row;
+        }
+    }
+}
