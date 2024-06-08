@@ -29,9 +29,6 @@ const VideoDescription = ({video}) => {
                 <p className="videoDescription__descriptionPara">
                     {video.description}
                 </p>
-                <p className="videoDescription__descriptionPara">
-                    {video.comments.length} Comments
-                </p>
             </section>
     );
 };
