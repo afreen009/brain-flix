@@ -1,11 +1,23 @@
 @use '/src/styles/partials/global' as *;
 @use '/src/styles/partials/variables' as*;
+@use '/src/styles/partials/mixins' as*;
 
 *{
     font-family: 'AvenirNext';
     background-color: $secondary-color-4;
+    color: $primary-color-1;
     flex-direction: column;
     justify-content: start;
     margin:0;
     padding: 0;
+}
+
+.main {
+    @include tablet {
+        &__innerSec {
+            width: 100vw;
+            display: inline-flex;
+            flex-direction: row;
+        }
+    }
 }

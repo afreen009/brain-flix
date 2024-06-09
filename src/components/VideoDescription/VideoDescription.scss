@@ -20,6 +20,9 @@
             margin-left: 2.25rem;
             margin-top: 1.5rem;
         }
+        @include desktop {
+            width: 50vw;
+        }
     }
     &__divider {
         margin-left: 1rem;
