@@ -5,7 +5,9 @@
 .videoDescription {
     width: 100vw;
     height: auto;
-    display: inline-flex;
+    display: inline-block;
+    flex-direction: column;
+    background-color: antiquewhite;
     &__title{
         margin-left: 1rem;
         margin-top: 1rem;
