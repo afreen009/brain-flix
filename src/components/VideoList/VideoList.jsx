@@ -4,7 +4,7 @@ import './../VideoList/VideoList.scss'
 const VideoList = ({videoList, handleSelectVideo}) => {
     return (
             <section className="videoList">
-                <p>NEXT VIDEOS</p>
+                <p className="videoList__heading">NEXT VIDEOS</p>
                 {videoList.length > 0 ? (
                     <ol>
                         {videoList.map((video, index) => (
@@ -13,7 +13,7 @@ const VideoList = ({videoList, handleSelectVideo}) => {
                                 <div className="videoList__divider"></div>
                                 <section className="videoList__card" onClick={()=> handleSelectVideo(video.id)}>
                                     <div className="videoList__imgBox"> 
-                                            <img className="" src={video.image} alt="" />
+                                            <img className="videoList__img" src={video.image} alt="video images" />
                                     </div>
                                     <div className="videoList__videoNameDiv">
                                         <p className="videoList__videoName">

@@ -11,10 +11,11 @@
 }
 
 .main {
+    width: 100vw;
+    background-color: pink;
     &__innerSec {
         @include desktop {
-            background-color: wheat;
-            width: 100vw;
+            width: 100%;
             display: inline-flex;
             flex-direction: row;
         }

@@ -4,36 +4,68 @@
 
 
 .videoList {
+    height: auto;
+    display: inline-block;
+    padding: 0;
     margin: 0 1rem;
     @include desktop {
-        width: 50vw;
-        height: 100vh;
-        background-color: aqua;
+        width: 30vw;
     }
     &__card {
-        // background-color: yellow;
-        // height: fit-content;
         display: inline-flex;
         flex-direction: row;
         width: 100%;
-        // height: 100%;
+        padding-bottom: 0.5rem;
     }
 
     &__imgBox {
-        display: flex;
-        justify-content: normal;
-        width: 100px;
-        height: auto;
+        display: inline-flex;
+        justify-content: center;
+        overflow: hidden;
+        max-width: 30vw;
+        height: 15vh;
+        background-repeat: no-repeat;
         border-radius: .25rem;
+        @include desktop {
+            width: 30%;
+            height: 10vh;
+        }
     }
 
     &__img{
         width: 100%;
         height: auto;
     }
-    // &__videoNameDiv{
-    //     display: inline-flex;
-    //     flex-direction: column;
-    //     height: 100px;
-    // }
+    &__videoNameDiv {
+        margin: 0;
+        display: inline-flex;
+        flex-direction: column;
+        overflow-y: hidden;
+        justify-content: space-between;
+        width: 60vw;
+        height: 15vh;
+        padding-left: 1rem;
+        @include desktop {
+            width: 60%;
+            height: 10vh;
+        }
+    }
+    &__heading {
+        color: $primary-color-3;
+        font-size: .8125rem;
+        width: 80%;
+        font-weight: 600;
+        padding:0 0 1rem 0;
+        @include tablet {
+            margin-top: 1.5rem;
+            font-size: 1rem;
+        }
+    }
+    &__videoName {
+        font-size: .875rem;
+        font-weight: 600;
+        overflow-y: hidden;
+        padding-right: 1rem;
+    }
+
 }
