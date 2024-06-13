@@ -135,10 +135,9 @@ input,textarea::placeholder{
         left: 3%;
         top: 26%;
         margin-right: .125rem;
-        
     }
-    &__submitButton:hover{
-        background-color:$secondary-color-1;
-    }
+    // &__submitButton:hover{
+    //     background-color:$secondary-color-1;
+    // }
     
 }

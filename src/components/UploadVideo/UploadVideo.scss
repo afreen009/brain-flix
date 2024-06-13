@@ -1,7 +1,7 @@
 @use '/src/styles/partials/variables' as*;
 @use '/src/styles/partials/mixins' as *;
 @use '/src/styles/partials/variables' as*;
-// @use '/src/assets/images/Upload-video-preview.jpg';
+// @use '/src/assets/icons/publish.svg';
 
 .uploadVideo {
     border-top: 1px solid $secondary-color-3;
@@ -14,7 +14,7 @@
         margin: 1rem 0 1rem 1rem;
     }
 
-    &__thumbnailLabel {
+    &__thumbnailLabel, &__titleLabel, &__descriptionLabel {
         @include greyTitle;
         margin-left:1rem;
     }
@@ -26,13 +26,51 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-bottom: 1rem;
     }
-    
+
     &__image {
         margin-top: 0.5rem;
         border-radius: 0.25rem;
         max-width: calc(100% - 2rem);  
         max-height: calc(100% - 2rem); 
         object-fit: cover;
+    }
+
+    &__title, &__description {
+        padding: .75rem;
+        outline: none;
+        border: 1px solid $secondary-color-3;
+        border-radius:.25rem;
+        box-sizing: border-box;
+        margin:0 1rem;
+        font-weight: 600;
+        font-size: .8125rem;
+        margin-bottom: 1rem;
+        width: calc(100% - 2rem);  
+    }
+    &__title::placeholder, &__description::placeholder{
+        color: $primary-color-1;
+    }
+    &__btnDiv {
+        justify-content: center;
+        align-items: center;
+        display:flex;
+    }
+    &__publishBtn {
+        @include button;
+        max-width: calc(100% - 2rem);  
+        max-height: calc(100% - 2rem); 
+    }
+    &__publishBtn img {
+        @include buttonImg;
+    }
+    &__cancelBtn {
+        margin: 2.25rem 0;
+        display: inline-flex;
+        color: $primary-color-2;
+        font-weight: 600;
+        justify-content: center;
+        width: 100vw;
     }
  }

@@ -35,3 +35,26 @@
       font-size: 1rem;
   }
 }
+@mixin button {
+  display: block;
+  width: 100%;
+  background-color: $primary-color-2;;
+  color: $primary-color-4;
+  padding: .75rem 1.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  border-radius: .25rem;
+  font-weight: 600;
+  &:hover {
+    background-color: $secondary-color-2;
+  }
+}
+
+@mixin buttonImg {
+  display: inline-flex;
+  position:absolute;
+  background-color: $primary-color-2;
+  left: 3%;
+  top: 26%;
+}

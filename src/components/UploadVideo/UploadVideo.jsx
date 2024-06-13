@@ -16,23 +16,26 @@ const UploadVideo = () =>{
         </section>
         <form className='uploadVideo__formSec'>
             <section className="uploadVideo__titleSec">
-                <label htmlFor="uploadVideo__title">
+                <label className='uploadVideo__titleLabel' htmlFor="uploadVideo__title">
                     TITLE YOUR VIDEO
-                    <input type="text" id="uploadVideo__title"
+                    <input type="text" className='uploadVideo__title' id="uploadVideo__title"
                     placeholder="Add a title to your video"/>
                 </label>
             </section>
             <section className="uploadVideo__descriptionSec">
-                <label htmlFor="descriptionSec">
-                    <textarea name="uploadVideo__descriptionSec" id="descriptionSec" cols="30" rows="10"></textarea>
+                <label className='uploadVideo__descriptionLabel' htmlFor="uploadVideo__description">
+                    ADD A VIDEO DESCRIPTION
+                    <textarea cols="30" rows="10" type="text" className='uploadVideo__description' id="uploadVideo__title"
+                    placeholder="Add a description to your video"/>
                 </label>
             </section>
-            <div className="uploadVideo__descriptionSec">
-                <button >
+            <div className="uploadVideo__btnDiv">
+                <button className="uploadVideo__publishBtn">
+                    <img src="/src/assets/icons/publish.svg" alt="publish icon" />
                     PUBLISH
                 </button>
             </div>
-            <span>
+            <span className='uploadVideo__cancelBtn'>
                 CANCEL
             </span>
         </form>

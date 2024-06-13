@@ -73,8 +73,6 @@
         margin:0 1rem;
         font-weight: 600;
         font-size: .8125rem;
-        @include tablet {
-        }
     }
     &__searchBar::placeholder {
         color: $primary-color-1;
@@ -118,7 +116,6 @@
         width: 100vw;
         @include tablet {
             width: auto;
-
             display: inline-flex;
         }
     }
@@ -130,24 +127,11 @@
     }
 
     &__uploadBtn {
-        display: block;
-        width: 100%;
-        background-color: $primary-color-2;;
-        color: white;
-        padding: .75rem 1.75rem;
-        font-size: 1rem;
-        cursor: pointer;
-        position: relative;
-        border-radius: .25rem;
-        font-weight: 600;
+        @include button;
     }
 
     &__btnImg{
-        display: inline-flex;
-        position:absolute;
-        background-color: $primary-color-2;
-        left: 3%;
-        top: 26%;
+        @include buttonImg;
     }
 
 }
