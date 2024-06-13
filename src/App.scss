@@ -3,7 +3,7 @@
 @use '/src/styles/partials/mixins' as*;
 
 *{
-    font-family: 'AvenirNext';
+    font-family: 'AvenirNext',sans-serif;
     background-color: $secondary-color-4;
     color: $primary-color-1;
     margin:0;

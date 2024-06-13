@@ -14,7 +14,7 @@ const Comments = ({video}) => {
                             </div>
                         </div>
                         <div className="comments__buttonDiv">
-                            <label className="comments__commentLabel" for="comments">JOIN THE CONVERSATION
+                            <label className="comments__commentLabel" htmlFor="comments">JOIN THE CONVERSATION
                                 <textarea
                                         name="comments__commentBox"
                                         id="comments"

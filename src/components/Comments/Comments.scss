@@ -59,8 +59,7 @@ input,textarea::placeholder{
     }
 
     &__commentLabel{
-        color: $primary-color-3;
-        font-size: .875rem;
+        @include greyTitle;
         width: 80%;
         @include tablet {
             width: 70%;
@@ -68,7 +67,6 @@ input,textarea::placeholder{
         @include desktop {
             width: 75%;
         }
-        
     }
 
     &__image {

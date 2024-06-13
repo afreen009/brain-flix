@@ -1,0 +1,38 @@
+@use '/src/styles/partials/variables' as*;
+@use '/src/styles/partials/mixins' as *;
+@use '/src/styles/partials/variables' as*;
+// @use '/src/assets/images/Upload-video-preview.jpg';
+
+.uploadVideo {
+    border-top: 1px solid $secondary-color-3;
+    width: 100vw;
+    height: auto;
+    margin-right: 1rem;
+    
+    &__headerName {
+        @include title;
+        margin: 1rem 0 1rem 1rem;
+    }
+
+    &__thumbnailLabel {
+        @include greyTitle;
+        margin-left:1rem;
+    }
+
+    &__imageWrapper {
+        width: 100%;  
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    &__image {
+        margin-top: 0.5rem;
+        border-radius: 0.25rem;
+        max-width: calc(100% - 2rem);  
+        max-height: calc(100% - 2rem); 
+        object-fit: cover;
+    }
+ }
