@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import './../VideoList/VideoList.scss'
 
 const VideoList = ({videoList, handleSelectVideo}) => {
@@ -7,24 +7,26 @@ const VideoList = ({videoList, handleSelectVideo}) => {
                 <p className="videoList__heading">NEXT VIDEOS</p>
                 {videoList.length > 0 ? (
                     <ol>
-                        {videoList.map((video, index) => (
+                        {videoList.map((video) => (
                             <>
-                            <li key={video.id}>
-                                <div className="videoList__divider"></div>
-                                <section className="videoList__card" onClick={()=> handleSelectVideo(video.id)}>
-                                    <div className="videoList__imgBox"> 
-                                            <img className="videoList__img" src={video.image} alt="video images" />
-                                    </div>
-                                    <div className="videoList__videoNameDiv">
-                                        <p className="videoList__videoName">
-                                            {video.title}
-                                        </p>
-                                        <p className="videoList__channel">
-                                            {video.channel}
-                                        </p>
-                                    </div>
-                                </section>
-                            </li>
+                                <Link to={`/videos/${video.id}`}>
+                                    <li key={video.id}>
+                                        <div className="videoList__divider"></div>
+                                        <section className="videoList__card" onClick={()=> handleSelectVideo(video.id)}>
+                                            <div className="videoList__imgBox"> 
+                                                <img className="videoList__img" src={video.image} alt="video images" />
+                                            </div>
+                                            <div className="videoList__videoNameDiv">
+                                                <p className="videoList__videoName">
+                                                    {video.title}
+                                                </p>
+                                                <p className="videoList__channel">
+                                                    {video.channel}
+                                                </p>
+                                            </div>
+                                        </section>
+                                    </li>
+                                </Link>
                             </>
                         ))}
                     </ol>

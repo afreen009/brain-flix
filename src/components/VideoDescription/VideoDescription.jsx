@@ -30,7 +30,7 @@ const VideoDescription = ({video}) => {
                 <p className="videoDescription__descriptionPara">
                     {video.description}
                 </p>
-                <Comments video={video}/>
+                <Comments id={video.id}/>
             </section>
     );
 };
