@@ -20,6 +20,7 @@
         flex-direction: row;
         justify-content: space-around;
     }
+
     &__logoDiv{
         width: 100%;
         margin-bottom: 1rem;
@@ -31,6 +32,7 @@
             justify-content: center;
         }
     }
+
     &__rightSec{
         @include tablet {
             display: inline-flex;
@@ -38,6 +40,7 @@
             margin-right: 4.25rem;
         }
     }
+
     &__logo{
         background-color: $primary-color-4;
         background-image: url('/src/assets/logo/BrainFlix-logo.svg');
@@ -47,6 +50,7 @@
         width: 7.5rem;
         background-repeat: no-repeat;
     }
+    
     &__searchDiv {
         display: inline-flex;
         margin-bottom: 1rem;

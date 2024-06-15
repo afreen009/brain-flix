@@ -40,10 +40,11 @@
   width: 100%;
   background-color: $primary-color-2;;
   color: $primary-color-4;
-  padding: .75rem 1.75rem;
+  padding: .75rem .75rem;
   font-size: 1rem;
   cursor: pointer;
   position: relative;
+  border: none;
   border-radius: .25rem;
   font-weight: 600;
   &:hover {

@@ -44,7 +44,8 @@
         justify-content: space-between;
         width: 60vw;
         height: 15vh;
-        padding-left: 1rem;
+        padding-left: 0.5rem;
+
         @include desktop {
             width: 60%;
             height: 10vh;
@@ -55,10 +56,20 @@
         @include greyTitle;
     }
     &__videoName {
-        font-size: .875rem;
-        font-weight: 600;
+        font-size: .8125rem;
+        font-weight: 700;
         overflow-y: hidden;
         padding-right: 1rem;
+        @include tablet {
+            font-size: .875rem;
+        }
     }
 
+    &__channel {
+        font-size: .875rem;
+        font-weight:600;
+        @include tablet {
+            font-size: .875rem;
+        }
+    }
 }

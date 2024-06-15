@@ -13,7 +13,6 @@
 
 .main {
     width: 100vw;
-    background-color: pink;
     &__innerSec {
         @include desktop {
             width: 100%;
