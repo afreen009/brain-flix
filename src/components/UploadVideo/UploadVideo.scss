@@ -11,14 +11,20 @@
     @include desktop {
         width: 100vw;
         height: 100vh;
-        margin-left: 8rem
     }
-
+    &__formSec {
+        margin:0;
+        display: inline-block;
+        width: 100%;
+    }
     &__headerName {
         @include title;
         margin: 1rem 0 1rem 1rem;
         @include tablet {
         margin-left: 2.25rem;
+        }
+        @include desktop{
+            margin-left:10rem;
         }
     }
     &__titleLabel, &__descriptionLabel{
@@ -48,7 +54,8 @@
             width: 55vw;
         }
         @include desktop {
-            width: 25vw;
+            width: 30vw;
+            
         }
     }
 
@@ -70,12 +77,16 @@
             margin: 0 2.25rem;
         }
         @include desktop {
-            width: auto;
+            width: 40%;
+            padding-right: 2rem;
         }
     }
     &__inlineSec {
         @include desktop{
             display: inline-flex;
+            width: 100%;
+            justify-content: center;
+            margin:0 1.25rem;
         }
     }
     &__title, &__description {
@@ -139,6 +150,9 @@
         @include divider;
         margin: 1rem 2.25rem;
        }
-
+       @include desktop {
+        @include divider;
+        margin: 1rem 10.25rem;
+       }
     }
  }

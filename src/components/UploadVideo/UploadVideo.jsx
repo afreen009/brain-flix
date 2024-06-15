@@ -6,7 +6,7 @@ const UploadVideo = () =>{
         <div className='uploadVideo__innerdiv'>
         <h2 className="uploadVideo__headerName">
                 Uplaod Video
-            </h2>
+        </h2>
             <div className='uploadVideo__divider'></div>
             <form className='uploadVideo__formSec'>
                 <section className='uploadVideo__inlineSec'>
