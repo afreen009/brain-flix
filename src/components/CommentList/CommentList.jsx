@@ -3,15 +3,14 @@ import '../CommentList/CommentList.scss';
 
 const CommentsList = ({commentsList}) => {
     function formatDate (i){
-        const formattedDate = new Date(commentsList[i].timestamp).toLocaleDateString("en-US");
+        const formattedDate = new Date(commentsList[i]?.timestamp).toLocaleDateString("en-US");
         return formattedDate;
     }
     return (
         <section className="commentsList">
-         {commentsList.length > 0 ? (
+         {commentsList?.length > 0 ? (
             <ol>
                 {commentsList.map((comment, index) => (
-                    <>
                     <li key={comment.id}>
                         <div className="commentList__divider"></div>
                         <section className="commentList__card">
@@ -33,7 +32,6 @@ const CommentsList = ({commentsList}) => {
                             </div>
                         </section>
                     </li>
-                    </>
                 ))}
             </ol>
         ) : (

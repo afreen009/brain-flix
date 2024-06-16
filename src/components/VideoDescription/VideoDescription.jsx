@@ -1,4 +1,3 @@
-import { useState } from "react";
 import '../VideoDescription/VideoDescription.scss';
 import Comments from '../Comments/Comments';
 
@@ -30,7 +29,7 @@ const VideoDescription = ({video}) => {
                 <p className="videoDescription__descriptionPara">
                     {video.description}
                 </p>
-                <Comments id={video.id}/>
+                <Comments comments={video.comments}/>
             </section>
     );
 };

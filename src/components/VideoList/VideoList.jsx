@@ -8,9 +8,7 @@ const VideoList = ({videoList, handleSelectVideo}) => {
                 {videoList.length > 0 ? (
                     <ol>
                         {videoList.map((video) => (
-                            <>
-                                <Link to={`/videos/${video.id}`}>
-                                    <li key={video.id}>
+                                <Link to={`/videos/${video.id}`} key={video.id} >
                                         <div className="videoList__divider"></div>
                                         <section className="videoList__card" onClick={()=> handleSelectVideo(video.id)}>
                                             <div className="videoList__imgBox"> 
@@ -25,9 +23,7 @@ const VideoList = ({videoList, handleSelectVideo}) => {
                                                 </p>
                                             </div>
                                         </section>
-                                    </li>
                                 </Link>
-                            </>
                         ))}
                     </ol>
             ) : (
