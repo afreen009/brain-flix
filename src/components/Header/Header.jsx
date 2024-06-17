@@ -5,9 +5,11 @@ const Header = () => {
     return (
         <header>
             <nav className="headers">
-                <div className="headers__logoDiv">
-                    <div className="headers__logo"></div>
-                </div>
+                <Link to={'/'}>
+                    <div className="headers__logoDiv">
+                        <div className="headers__logo"></div>
+                    </div>
+                </Link>
                 <div className="headers__rightSec">
                     <div className="headers__searchDiv">
                         <input type="text" className="headers__searchBar" placeholder="Search" />

@@ -1,4 +1,6 @@
-.hero {
+@use '/src/styles/partials/variables' as*;
+@use '/src/styles/partials/mixins' as *;
+@use '/src/styles/partials/variables' as*;.hero {
     width: 100vw;
     height: auto;
     background-repeat: no-repeat;
@@ -6,9 +8,15 @@
     background-position: top;
 
     &__videoContainer {
-        background-color: #0a0a22;
+        background-color: $secondary-color-1;
         background-size: 100%;
         display: flex;
         justify-content: normal;
+        @include tablet {
+            padding: 0 2.25rem;
+        }
+        @include desktop {
+            padding: 0 12.25rem;
+        }
     }
 }

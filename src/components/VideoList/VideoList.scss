@@ -8,6 +8,9 @@
     display: inline-block;
     padding: 0;
     margin: 0 1rem;
+    @include tablet {
+        margin:0 2.25rem
+    }
     @include desktop {
         width: 30vw;
     }
@@ -17,7 +20,7 @@
         display: inline-flex;
         flex-direction: row;
         width: 100%;
-        padding-bottom: 0.5rem;
+        padding-bottom: 1rem;
     }
 
     &__imgBox {
@@ -25,9 +28,9 @@
         justify-content: center;
         overflow: hidden;
         max-width: 30vw;
-        height: 15vh;
+        height: 14vh;
         background-repeat: no-repeat;
-        border-radius: .25rem;
+        border-radius: 8px;
         @include desktop {
             width: 30%;
             height: 10vh;
@@ -45,7 +48,7 @@
         overflow-y: hidden;
         justify-content: space-between;
         width: 60vw;
-        height: 15vh;
+        height: 14vh;
         padding-left: 0.5rem;
 
         @include desktop {

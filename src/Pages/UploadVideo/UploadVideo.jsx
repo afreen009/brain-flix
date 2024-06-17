@@ -1,7 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import './UploadVideo.scss'
 import Header from '../../components/Header/Header'
 
 const UploadVideo = () =>{
+    const navigate = useNavigate();
+
+    const handleSubmit = (event) => {
+      event.preventDefault();
+  
+      alert("Your upload was successful! You rock!");
+      navigate("/");
+    };
+    
     return (
         <>
         <Header />
@@ -11,7 +21,7 @@ const UploadVideo = () =>{
                     Uplaod Video
             </h2>
                 <div className='uploadVideo__divider'></div>
-                <form className='uploadVideo__formSec'>
+                <form onSubmit={handleSubmit} className='uploadVideo__formSec'>
                     <section className='uploadVideo__inlineSec'>
                         <section className='uploadVideo__thumbnailsec'>
                             <label className='uploadVideo__thumbnailLabel' htmlFor="uploadVideo__imageWrapper">
@@ -41,7 +51,7 @@ const UploadVideo = () =>{
                     <div className='uploadVideo__divider'></div>
                     <section className='uploadVideo__btnSec'>
                         <div className="uploadVideo__btnDiv">
-                            <button className="uploadVideo__publishBtn">
+                            <button className="uploadVideo__publishBtn" type="submit">
                                 <img src="/src/assets/icons/publish.svg" alt="publish icon" />
                                 PUBLISH
                             </button>

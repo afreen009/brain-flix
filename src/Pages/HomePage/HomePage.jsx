@@ -56,7 +56,6 @@ function HomePage() {
 const filteredVideos= videos.filter((video)=>video.id !== selectedVideoId);
 
 const handleSelectVideo = (clickedId) => {
-  console.log(clickedId);
   selectedVideoId = clickedId;
   const foundVideo = videos.find((video) => clickedId === video.id);
   setselectedVideo(foundVideo);

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import '../Hero/Hero.scss';
 
 const Hero = ({video}) => {
