@@ -1,4 +1,3 @@
-import { useState } from "react";
 import '../CommentList/CommentList.scss';
 
 const CommentsList = ({commentsList}) => {

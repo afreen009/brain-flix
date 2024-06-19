@@ -1,5 +1,7 @@
 import '../VideoDescription/VideoDescription.scss';
 import Comments from '../Comments/Comments';
+import Likes from '/src/assets/icons/likes.svg';
+import Views from '/src/assets/icons/views.svg';
 
 const VideoDescription = ({video}) => {
     const formattedDate = new Date(video.timestamp).toLocaleDateString("en-US");
@@ -16,11 +18,11 @@ const VideoDescription = ({video}) => {
                     </div>
                     <div className="videoDescription__channelTime">
                         <div className="videoDescription__viewRow">
-                            <img src="/src/assets/icons/views.svg" alt="views icon" />
+                            <img src={Views} alt="views icon" />
                             <p className="videoDescription__views">{video.views}</p>
                         </div>
                         <div className="videoDescription__likesRow">
-                            <img src="/src/assets/icons/likes.svg" alt="likes icon" />
+                            <img src={Likes} alt="likes icon" />
                             <p className="videoDescription__likes">{video.likes}</p>
                         </div>
                     </div>

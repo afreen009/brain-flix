@@ -15,6 +15,7 @@ const UploadVideo = () =>{
     return (
         <>
         <Header />
+        <main>
         <section className="uploadVideo">
             <div className='uploadVideo__innerdiv'>
             <h2 className="uploadVideo__headerName">
@@ -63,6 +64,7 @@ const UploadVideo = () =>{
                 </form>
             </div>
         </section>
+        </main>
         </>
     );
 }
