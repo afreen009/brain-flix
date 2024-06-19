@@ -61,9 +61,6 @@ input,textarea::placeholder{
     &__commentLabel{
         @include greyTitle;
         width: 80%;
-        @include tablet {
-            // width: 68%;
-        }
         @include desktop {
             width: 75%;
         }
