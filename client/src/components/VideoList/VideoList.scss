@@ -1,0 +1,80 @@
+@use '/src/styles/partials/variables' as*;
+@use '/src/styles/partials/mixins' as *;
+@use '/src/styles/partials/variables' as*;
+
+
+.videoList {
+    height: auto;
+    display: inline-block;
+    padding: 0;
+    margin: 0 1rem;
+    @include tablet {
+        margin:0 2.25rem
+    }
+    @include desktop {
+        width: 30vw;
+    }
+
+
+    &__card {
+        display: inline-flex;
+        flex-direction: row;
+        width: 100%;
+        padding-bottom: 1rem;
+    }
+
+    &__imgBox {
+        display: inline-flex;
+        justify-content: center;
+        overflow: hidden;
+        max-width: 30vw;
+        height: 14vh;
+        background-repeat: no-repeat;
+        border-radius: 8px;
+        @include desktop {
+            width: 30%;
+            height: 10vh;
+        }
+    }
+
+    &__img{
+        width: 100%;
+        height: auto;
+    }
+    &__videoNameDiv {
+        margin: 0;
+        display: inline-flex;
+        flex-direction: column;
+        overflow-y: hidden;
+        justify-content: space-between;
+        width: 60vw;
+        height: 14vh;
+        padding-left: 0.5rem;
+
+        @include desktop {
+            width: 60%;
+            height: 10vh;
+        }
+    }
+    &__heading {
+        padding:0 0 1rem 0;
+        @include greyTitle;
+    }
+    &__videoName {
+        font-size: .8125rem;
+        font-weight: 700;
+        overflow-y: hidden;
+        padding-right: 1rem;
+        @include tablet {
+            font-size: .875rem;
+        }
+    }
+
+    &__channel {
+        font-size: .875rem;
+        font-weight:600;
+        @include tablet {
+            font-size: .875rem;
+        }
+    }
+}

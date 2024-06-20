@@ -1,0 +1,104 @@
+@use '/src/styles/partials/variables' as*;
+@use '/src/styles/partials/mixins' as *;
+@use '/src/styles/partials/variables' as*;
+
+.commentList{
+    width:100%; 
+    height: auto;
+    margin: 0;
+    display: inline-flex;
+    @include desktop{
+        width: 56vw;
+        margin-right: 0;
+    }
+
+    &__card {
+        width: 100%;
+        display: inline-flex;
+    }
+
+    &__avatarDiv {
+        width: 8.4rem;
+        @include tablet {
+            width: 9.4rem;
+            margin-top: 0rem;
+            padding-top: 0;
+            
+        } 
+    }
+
+    &__commentAvatarCircle {
+        width: 2.25rem;
+        height: 2.25rem;
+        background: $secondary-color-3;
+        margin-left: 1rem;
+        border-radius: 50%;
+        @include tablet {
+            margin-top: 1rem;
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+    &__commentDiv {
+        display: inline-block;
+        padding:0 1rem 0 .3125rem ;
+        width: 160%;
+        @include tablet {
+            padding-left:1rem;
+        }
+    }
+    &__commentedNameTimeDiv{
+        display: inline-flex;
+        flex-direction: row;
+        width: 105%;
+        margin-bottom: 1rem;
+        justify-content: space-between;
+        @include tablet {
+            width:100%;
+        }
+    }
+
+    &__commentedName {
+        font-size: 1rem;
+        font-weight: 600;
+        color: $primary-color-1;
+    }
+
+    &__commentedDate {
+        font-size: .875rem;
+        color: $primary-color-3;
+        font-weight: 400;
+        padding-right: 1rem;
+        @include tablet {
+            margin-right:4.25rem;
+        }
+        @include desktop{
+            padding: 0;
+        }
+    }
+    &__comment {
+        margin:0 0 1rem 0;
+        font-size: .8125rem;
+        font-weight: 600;
+        @include tablet {
+            margin-right: 1.25rem;
+        }
+        @include desktop{
+            margin-right: 0;
+        }
+    }
+    &__divider {
+        @include divider;
+        margin: 0 1rem 1rem 1rem;
+        @include tablet{
+            margin-right: 2.25rem;
+        }
+        @include desktop{
+            margin-right: 0;
+        }
+        &--bottom{
+            margin:0;
+            margin:0 1rem
+        }
+    }
+}

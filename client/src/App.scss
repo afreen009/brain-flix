@@ -1,0 +1,23 @@
+@use '/src/styles/partials/global' as *;
+@use '/src/styles/partials/variables' as*;
+@use '/src/styles/partials/mixins' as*;
+
+*{
+    font-family: 'AvenirNext',sans-serif;
+    background-color: $secondary-color-4;
+    color: $primary-color-1;
+    margin:0;
+    padding: 0;
+    display: flexbox;
+}
+
+.main {
+    width: 100vw;
+    &__innerSec {
+        @include desktop {
+            width: 100%;
+            display: inline-flex;
+            flex-direction: row;
+        }
+}
+}
