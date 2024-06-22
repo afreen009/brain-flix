@@ -6,21 +6,18 @@ import VideoDescription from '../../components/VideoDescription/VideoDescription
 import './HomePage.scss';
 import VideoList from '../../components/VideoList/VideoList';
 
-const API_URL = "https://unit-3-project-api-0a5620414506.herokuapp.com/"; // root route for API endpoint
-const API_KEY = "?api_key=ea5349e3-babf-4703-96e7-ebbc2041eb84";
 
 function HomePage() {
+  const API_URL = import.meta.env.VITE_API_URL;
   const [videos, setVideo] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null); 
   let { videoId } = useParams();
-  
-  const getVideosEndPoint = `${API_URL}videos${API_KEY}`;
 
 
   const getVideos = async () => {
     try{
-      const result= await axios.get(getVideosEndPoint);
-      const videoList = result.data;
+      const apiData = await axios.get(`${API_URL}/videos`);
+      const videoList = apiData.data;
       setVideo(videoList);
     }catch(e){
       console.log(e);
@@ -34,18 +31,17 @@ function HomePage() {
  let selectedVideoId = videoId || videos[0]?.id;
 
   useEffect(() => {
-
     const getSingleVideo =  async(selectedVideoId) => {
       try {
-        const response = await axios.get(`${API_URL}videos/${videoId || selectedVideoId}${API_KEY}`);
+        const response = await axios.get(`${API_URL}/videos/${videoId || selectedVideoId}`);
         setSelectedVideo(response.data);
       } catch (error) {
         console.error(error);
       }
   };
-
+  if(videos[0]?.id){
     getSingleVideo(selectedVideoId);
-
+  }
 }, [selectedVideoId]);
 
 const filteredVideos= videos.filter((video)=>video.id !== selectedVideoId);
