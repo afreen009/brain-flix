@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Header from '../../components/Header/Header';
 import Hero from '../../components/Hero/Hero';
 import VideoDescription from '../../components/VideoDescription/VideoDescription';
 import './HomePage.scss';
@@ -23,7 +22,6 @@ function HomePage() {
       const result= await axios.get(getVideosEndPoint);
       const videoList = result.data;
       setVideo(videoList);
-      setSelectedVideo(videoList[0]);
     }catch(e){
       console.log(e);
     }
@@ -33,12 +31,10 @@ function HomePage() {
     getVideos();
   }, []);
 
-  let selectedVideoId = null;
-  if(videos.length !==0){
-    selectedVideoId = videoId || selectedVideo.id;
-  }
+ let selectedVideoId = videoId || videos[0]?.id;
 
   useEffect(() => {
+
     const getSingleVideo =  async(selectedVideoId) => {
       try {
         const response = await axios.get(`${API_URL}videos/${videoId || selectedVideoId}${API_KEY}`);
@@ -48,15 +44,13 @@ function HomePage() {
       }
   };
 
-  if(selectedVideo){
     getSingleVideo(selectedVideoId);
-  }
-  }, [selectedVideoId]);
+
+}, [selectedVideoId]);
 
 const filteredVideos= videos.filter((video)=>video.id !== selectedVideoId);
 
 const handleSelectVideo = (clickedId) => {
-  selectedVideoId = clickedId;
   const foundVideo = videos.find((video) => clickedId === video.id);
   setSelectedVideo(foundVideo);
 };
@@ -64,7 +58,6 @@ const handleSelectVideo = (clickedId) => {
  return ( 
   selectedVideo != null ? 
   <>
-    <Header />
     <main className='main'>
       <Hero video={selectedVideo}/> 
       <div className='main__innerSec'>

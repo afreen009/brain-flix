@@ -2,10 +2,10 @@ import '../Comments/Comments.scss';
 import CommentsList from "../CommentList/CommentList";
 
 
-const Comments = ({comments}) => {
+const Comments = ({video}) => {
     return (
             <section className="comments">
-                <p className="comments__commentsLength">{comments?.length} Comments</p>
+                <p className="comments__commentsLength">{video?.comments?.length} Comments</p>
                 <form action="">
                    <div className="comments__commentBoxsec">
                         <div className="comments__imageBox">
@@ -31,7 +31,7 @@ const Comments = ({comments}) => {
                         </div>
                     </div> 
                 </form>
-                <CommentsList commentsList={comments}/>
+                <CommentsList commentsList={video.comments}/>
             </section>
 
     );

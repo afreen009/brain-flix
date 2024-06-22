@@ -31,7 +31,7 @@ const VideoDescription = ({video}) => {
                 <p className="videoDescription__descriptionPara">
                     {video.description}
                 </p>
-                <Comments comments={video.comments}/>
+                <Comments video={video}/>
             </section>
     );
 };
