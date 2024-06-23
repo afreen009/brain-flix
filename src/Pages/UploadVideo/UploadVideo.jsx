@@ -1,20 +1,33 @@
 import { useNavigate } from "react-router-dom";
-import './UploadVideo.scss'
-import Header from '../../components/Header/Header'
+import './UploadVideo.scss';
+import axios from "axios";
 
 const UploadVideo = () =>{
+    const API_URL = import.meta.env.VITE_API_URL;
     const navigate = useNavigate();
 
-    const handleSubmit = (event) => {
-      event.preventDefault();
-  
-      alert("Your upload was successful! You rock!");
-      navigate("/");
-    };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+          const formData = {
+            title: e.target.title.value,
+            image: `${API_URL}images/thumbnail.jpg`,
+            description: e.target.description.value
+          };
+          await axios.post(`${API_URL}videos`,formData).then(()=> {
+            alert("Your upload was successful!");
+            navigate("/");
+          });
+          console.log('Form submitted successfully:', formData);
+        } catch (error) {
+          console.error('Error submitting form:', error);
+          // Handle error (e.g., display an error message)
+        }
+      };
+
     
     return (
         <>
-        <Header />
         <main>
         <section className="uploadVideo">
             <div className='uploadVideo__innerdiv'>
@@ -36,14 +49,14 @@ const UploadVideo = () =>{
                             <section className="uploadVideo__titleSec">
                                 <label className='uploadVideo__titleLabel' htmlFor="uploadVideo__title">
                                     TITLE YOUR VIDEO
-                                    <input type="text" className='uploadVideo__title' id="uploadVideo__title"
+                                    <input type="text" name ="title" className='uploadVideo__title' id="uploadVideo__title"
                                     placeholder="Add a title to your video"/>
                                 </label>
                             </section>
                             <section className="uploadVideo__descriptionSec">
                                 <label className='uploadVideo__descriptionLabel' htmlFor="uploadVideo__description">
                                     ADD A VIDEO DESCRIPTION
-                                    <textarea cols="30" rows="5" type="text" className='uploadVideo__description' id="uploadVideo__title"
+                                    <textarea cols="30" rows="5" name ="description" type="text" className='uploadVideo__description' id="uploadVideo__title"
                                     placeholder="Add a description to your video"/>
                                 </label>
                             </section>

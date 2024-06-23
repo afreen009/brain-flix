@@ -6,24 +6,22 @@ import VideoDescription from '../../components/VideoDescription/VideoDescription
 import './HomePage.scss';
 import VideoList from '../../components/VideoList/VideoList';
 
-
 function HomePage() {
   const API_URL = import.meta.env.VITE_API_URL;
   const [videos, setVideo] = useState([]);
-  const [selectedVideo, setSelectedVideo] = useState(null); 
+  const [selectedVideo, setSelectedVideo] = useState(null);
   let { videoId } = useParams();
-
+  const getVideosEndPoint = `${API_URL}videos`;
 
   const getVideos = async () => {
     try{
-      const apiData = await axios.get(`${API_URL}/videos`);
-      const videoList = apiData.data;
+      const result= await axios.get(getVideosEndPoint);
+      const videoList = result.data;
       setVideo(videoList);
     }catch(e){
       console.log(e);
     }
   }
-
   useEffect(() => {
     getVideos();
   }, []);
@@ -33,13 +31,14 @@ function HomePage() {
   useEffect(() => {
     const getSingleVideo =  async(selectedVideoId) => {
       try {
-        const response = await axios.get(`${API_URL}/videos/${videoId || selectedVideoId}`);
+        const response = await axios.get(`${API_URL}videos/${videoId || selectedVideoId}`);
         setSelectedVideo(response.data);
       } catch (error) {
         console.error(error);
       }
   };
-  if(videos[0]?.id){
+
+  if(videos[0]?.id || selectedVideoId){
     getSingleVideo(selectedVideoId);
   }
 }, [selectedVideoId]);
@@ -47,15 +46,15 @@ function HomePage() {
 const filteredVideos= videos.filter((video)=>video.id !== selectedVideoId);
 
 const handleSelectVideo = (clickedId) => {
-  const foundVideo = videos.find((video) => clickedId === video.id);
+  const foundVideo= videos.find((video) => clickedId === video.id);
   setSelectedVideo(foundVideo);
 };
 
- return ( 
-  selectedVideo != null ? 
+ return (
+  selectedVideo != null ?
   <>
     <main className='main'>
-      <Hero video={selectedVideo}/> 
+      <Hero video={selectedVideo}/>
       <div className='main__innerSec'>
       <VideoDescription video={selectedVideo} />
       <VideoList videoList={filteredVideos} handleSelectVideo={handleSelectVideo}/>
