@@ -18,10 +18,8 @@ const UploadVideo = () =>{
             alert("Your upload was successful!");
             navigate("/");
           });
-          console.log('Form submitted successfully:', formData);
         } catch (error) {
           console.error('Error submitting form:', error);
-          // Handle error (e.g., display an error message)
         }
       };
 
